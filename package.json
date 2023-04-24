@@ -1,8 +1,7 @@
 {
   "dependencies": {
     "express": "^4.18.2",
-    "serverless-http": "3.2.0",
-    "serverless-offline": "^12.00.4"
+    "serverless-http": "3.2.0"
   },
   "scripts": {
     "dev": "sls offline --httpPort 4500",
@@ -10,6 +9,7 @@
   },
   "devDependencies": {
     "jest": "^22.4.3",
+    "serverless-offline": "^12.00.4",
     "supertest": "^3.0.0"
   }
 }

@@ -3,27 +3,17 @@ service: serverless
 provider:
   name: aws
   runtime: nodejs12.x
-  profile: femasters
-  region: us-west-1
+  # profile: femasters
+  # region: us-west-1
   stage: dev
 
 plugins:
   - serverless-offline
 
-functions:  
-  todos:
-    handler: src/api/todos.handler
+functions:
+  api:
+    handler: src/api/api.handler
+    cors: true
     events:
-      - http:
-          path: todo
-          method: get
-  todo:
-    handler: src/api/todo.handler
-    events:
-      - http:
-          path: todo/{todo}
-          method: get
-          request:
-            parameters:
-              paths:
-                todo: true
+      - http: "GET /todos/{todo}"
+      - http: "GET /todos"
